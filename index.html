@@ -211,14 +211,89 @@
                 max-width: 280px;
             }
         }
+
+        /* Neural network animation */
+        .neural-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .neural-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .neural-node {
+            fill: var(--accent);
+            filter: drop-shadow(0 0 5px rgba(85, 176, 236, 0.7));
+        }
+
+        .neural-connection {
+            stroke: var(--accent);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 2px rgba(85, 176, 236, 0.5));
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .neural-pulse {
+            animation: pulse 3s infinite;
+        }
+
+        .moved-text {
+            color: var(--accent-bright);
+            font-size: 1.2rem;
+            margin: 20px 0;
+            background: rgba(62, 146, 204, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(62, 146, 204, 0.2);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">LVL3.AI</div>
-        <i class="fas fa-robot icon"></i>
-        <h1>Agentic AI Solutions</h1>
-        <p>Empowering the future through advanced AI technology</p>
+        
+        <!-- Neural Network Icon (SVG) -->
+        <div class="neural-icon">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Nodes -->
+                <circle class="neural-node" cx="50" cy="20" r="5" />
+                <circle class="neural-node" cx="30" cy="40" r="5" />
+                <circle class="neural-node" cx="70" cy="40" r="5" />
+                <circle class="neural-node" cx="20" cy="60" r="5" />
+                <circle class="neural-node" cx="50" cy="60" r="5" />
+                <circle class="neural-node" cx="80" cy="60" r="5" />
+                <circle class="neural-node" cx="35" cy="80" r="5" />
+                <circle class="neural-node" cx="65" cy="80" r="5" />
+                
+                <!-- Connections -->
+                <line class="neural-connection neural-pulse" x1="50" y1="20" x2="30" y2="40" />
+                <line class="neural-connection" x1="50" y1="20" x2="70" y2="40" />
+                <line class="neural-connection neural-pulse" x1="30" y1="40" x2="20" y2="60" />
+                <line class="neural-connection" x1="30" y1="40" x2="50" y2="60" />
+                <line class="neural-connection neural-pulse" x1="70" y1="40" x2="50" y2="60" />
+                <line class="neural-connection" x1="70" y1="40" x2="80" y2="60" />
+                <line class="neural-connection" x1="20" y1="60" x2="35" y2="80" />
+                <line class="neural-connection neural-pulse" x1="50" y1="60" x2="35" y2="80" />
+                <line class="neural-connection" x1="50" y1="60" x2="65" y2="80" />
+                <line class="neural-connection neural-pulse" x1="80" y1="60" x2="65" y2="80" />
+            </svg>
+        </div>
+        
+        <div class="moved-text">
+            We've moved to a new website!
+        </div>
+
+        <h1>lvl3 General AI Agents</h1>
+        <p>Empowering domain experts to deploy powerful AI agent solutions that work for their unique needs</p>
         
         <div class="buttons-container">
             <a href="https://spencerbrown1717.github.io/lvl3.AI/" class="btn">View Pitch Deck</a>
